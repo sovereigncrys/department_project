@@ -1,0 +1,8 @@
+<h1>Choose an Item to View</h1>
+<hr />
+<%= link_to "New Item" new_department_item_path(@department)
+<ul>
+    <% @items.each do |i| %>
+        <li><%= link_to i.name, department_item_path(@department, t) %></li>
+    <% end %>
+</ul>
