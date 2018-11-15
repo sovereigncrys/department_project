@@ -1,4 +1,4 @@
-<h1><%= @item.name %></h1>
+<h1><%= @department.name - @item.name %></h1>
 <hr />
 <p>Where to?</p>
 <%= link_to "View", department_item_path(@department, @item) %>
@@ -7,4 +7,7 @@
 <br />
 <%= link_to "Delete", department_item_path(@department), method: :delete %>
 <br />
+<%= @item.comments.each do |c| %>
+        <%= render "comment/comment", { comment: c} %>
+    <% end %>
 <button><%= link_to "View All", department_path %></button>
